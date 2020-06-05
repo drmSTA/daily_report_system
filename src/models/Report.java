@@ -17,8 +17,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import utility.DBHandler;
-import utility.StringEncryptor;
 import utility.StringValidator;
 
 @Table(name = "reports")
