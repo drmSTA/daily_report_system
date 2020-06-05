@@ -15,7 +15,7 @@ import utility.WB;
  */
 @WebServlet(WB.PATH_LOGOUT)
 public class LogoutServlet extends HttpServlet {
-  private static final long serialVersionUID = 20200601L;
+  private static final long serialVersionUID = 20200605L;
 
     /**
      * @see HttpServlet#HttpServlet()
