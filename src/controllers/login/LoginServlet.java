@@ -2,9 +2,6 @@ package controllers.login;
 
 import java.io.IOException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Employee;
-import utility.DBConnector;
 import utility.DBHandler;
 import utility.FlushHandler;
-import utility.StringEncryptor;
 import utility.StringValidator;
 import utility.WB;
 /**
@@ -23,7 +18,7 @@ import utility.WB;
  */
 @WebServlet(WB.PATH_LOGIN)
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 20200601L;
+    private static final long serialVersionUID = 20200605L;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -55,12 +50,12 @@ public class LoginServlet extends HttpServlet {
       Employee employee = null;
 
       if(!StringValidator.areEmpty(code, plainPassword)){
-        // Database access is only acceptable for id and password which are not empty
+        // Database access is only acceptable for both of id and password which is not empty
         employee = DBHandler.getEmployee(code, plainPassword);
       }
 
       if(employee == null){
-        // login fault for (1) invalid id and passwords (2) no user found in DB
+        // login fault for (1) invalid id and/or passwords (2) no such user found in DB
         request.setAttribute(WB.K_TOKEN, request.getSession().getId());
         request.setAttribute(WB.K_HAS_ERROR, true);
         request.setAttribute(WB.K_CODE, code);
