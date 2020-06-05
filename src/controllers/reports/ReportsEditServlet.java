@@ -3,8 +3,6 @@ package controllers.reports;
 
 import java.io.IOException;
 
-import javax.persistence.EntityManager;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Employee;
 import models.Report;
-import utility.DBConnector;
 import utility.DBHandler;
 import utility.WB;
 
@@ -22,7 +19,7 @@ import utility.WB;
  */
 @WebServlet(WB.PATH_REPORT_EDIT)
 public class ReportsEditServlet extends HttpServlet {
-    private static final long serialVersionUID = 20200601L;
+    private static final long serialVersionUID = 20200605L;
 
     /**
      * @see HttpServlet#HttpServlet()
