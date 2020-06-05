@@ -22,7 +22,7 @@ import utility.WB;
  */
 @WebServlet(WB.PATH_EMPLOYEE_DESTROY)
 public class EmployeesDestroyServlet extends HttpServlet {
-    private static final long serialVersionUID = 20200601L;
+    private static final long serialVersionUID = 20200605L;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,14 +38,15 @@ public class EmployeesDestroyServlet extends HttpServlet {
       String previousToken = (String)request.getParameter(WB.K_TOKEN);
       String currentToken = request.getSession().getId();
 
+      //CSRF対策
       if(StringValidator.isUnderValidSession(previousToken, currentToken)) {
+        // 前ページ より 対象の id を取得、データベースにて無効処理を実行
         int id = (Integer)(request.getSession().getAttribute(WB.K_EMPLOYEE_ID));
-
         DBHandler.setEmployeeInactivation(id);
-        request.getSession().setAttribute(WB.K_FLUSH, "削除が完了しました。");
 
+        //flush処理とページ転送
+        request.getSession().setAttribute(WB.K_FLUSH, "削除が完了しました。");
         response.sendRedirect(request.getContextPath() + WB.PATH_EMPLOYEE_INDEX);
         }
     }
-
 }
