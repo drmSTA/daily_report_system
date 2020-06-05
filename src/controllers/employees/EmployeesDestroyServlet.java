@@ -2,17 +2,13 @@ package controllers.employees;
 
 
 import java.io.IOException;
-import java.sql.Timestamp;
 
-import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Employee;
-import utility.DBConnector;
 import utility.DBHandler;
 import utility.StringValidator;
 import utility.WB;
