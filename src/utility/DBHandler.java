@@ -1,6 +1,5 @@
 package utility;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,7 +9,7 @@ import models.Employee;
 import models.Report;
 
 public class DBHandler {
-  private static final long serialVersionUID = 20200601L;
+  private static final long serialVersionUID = 20200605L;
   public static int ELEMENTS_UL_PER_PAGE = 15;
 
   public static Employee getEmployee(String code, String plainPassword){
@@ -176,7 +175,4 @@ public class DBHandler {
     entityManager.getTransaction().commit();
     entityManager.close();
   }
-
-
-
 }
