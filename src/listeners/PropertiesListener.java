@@ -1,7 +1,6 @@
 package listeners;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -20,7 +19,7 @@ import utility.WB;
  */
 @WebListener
 public class PropertiesListener implements ServletContextListener {
-    private static final long serialVersionUID = 20200601L;
+    private static final long serialVersionUID = 20200605L;
 
     /**
      * Default constructor.
@@ -40,7 +39,7 @@ public class PropertiesListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent)  {
         ServletContext context = servletContextEvent.getServletContext();
 
-        String path = context.getRealPath("/META-INF/application.properties");
+        String path = context.getRealPath(WB.PATH_APPLICATION_PROPERTIES);
         try {
             InputStream is = new FileInputStream(path);
             Properties properties = new Properties();

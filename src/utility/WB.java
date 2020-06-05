@@ -46,7 +46,7 @@ public class WB {
   // path management
   public static final String PATH_INDEX = "/index.html";
   public static final String PATH_INDEX_JSP = "/WEB-INF/views/topPage/index.jsp";
-
+  public static final String PATH_APPLICATION_PROPERTIES = "/META-INF/application.properties";
   public static final String PATH_LOGIN = "/login";
   public static final String PATH_LOGIN_JSP = "/WEB-INF/views/login/login.jsp";
   public static final String PATH_LOGOUT = "/logout";
