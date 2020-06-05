@@ -16,10 +16,11 @@ public class WB {
   public static final String K_EMPLOYEES = "employees";    //List<Employee>
   public static final String K_EMPLOYEE_COUNT = "employeeCount";    //String
   public static final String K_EMPLOYEE_ID = "employeeID";    //int
+
   public static final String K_CODE = "code";    //String
+  public static final String K_PLAIN_PASSWORD = "plainPassword";    //String
   public static final String K_NAME = "name";    //String
   public static final String K_PASSWORD = "pass";    //String
-  public static final String K_PLAIN_PASSWORD = "plainPassword";    //String
   public static final String K_ADMIN_FLAG = "admin_flag";
 
   public static final String K_LOGIN_EMPLOYEE = "loginEmployee"; //Employee
