@@ -21,7 +21,7 @@ import utility.WB;
  */
 @WebFilter("/*")
 public class LoginFilter implements Filter {
-  private static final long serialVersionUID = 20200601L;
+  private static final long serialVersionUID = 20200605L;
   /**
    * Default constructor.
    */
